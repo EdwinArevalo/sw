@@ -1,27 +1,67 @@
 
 
 
-<div class="card myBg myCard p-m-4">
-  <div class="p-grid p-mt-2">
-    <div class="p-col-3">
+<div class="p-m-4">
       <h3 class="text-color">
         Conexión a internet &nbsp; 
         <p-tag *ngIf="status" styleClass="p-mr-2" severity="success" value="ONLINE"></p-tag>
         <p-tag *ngIf="!status" severity="danger" value="OFFLINE"></p-tag>
       </h3>
-    </div>
-    <div class="p-col-9">
-      <h1 class="text-color">Formulario </h1>
-        <div class="p-fluid p-formgrid p-grid text-color">
-            <div class="p-field p-col">
-            <label for="firstname2">Firstname</label>
-            <input id="firstname2" type="text" pInputText> 
+      <div class="card myBg2 myCard">
+
+        <p-tabMenu [model]="items" [activeItem]="activeItem"> </p-tabMenu>
+
+        <div *ngIf="activeItem == items[0]">
+            <h1 class="text-color" >Añadir usuario </h1>
+        
+            <div class="p-fluid p-formgrid p-grid text-color">
+                <div class="p-field p-col">
+                  <label for="firstname2">Firstname</label>
+                  <input id="firstname2" type="text" pInputText> 
+                </div>
+                <div class="p-field p-col text-color">
+                    <label for="lastname2">Lastname</label>
+                    <input id="lastname2" type="text" pInputText> 
+                </div>
+            </div>
+            <div class="p-fluid p-formgrid p-grid text-color">
+                <div class="p-field p-col">
+                  <label for="Email">Email</label>
+                  <input id="Email" type="email" pInputText> 
+                </div>
+                <div class="p-field p-col text-color">
+                    <label for="edad">Edad</label>
+                    <input id="edad" type="text" pInputText> 
+                </div>  
+            </div>
+            <div class="p-fluid p-formgrid p-grid text-color">
+              <div class="p-field p-col">
+                <button pButton type="button" label="Guardar" ></button>
+              </div>
+            </div>
         </div>
-        <div class="p-field p-col text-color">
-            <label for="lastname2">Lastname</label>
-            <input id="lastname2" type="text" pInputText> 
-        </div>
+
+        <div *ngIf="activeItem == items[1]">
+          <h1 class="text-color" >Listado de usuarios </h1>
+       
+          <p-table [value]="users">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-user>
+                <tr>
+                    <td>{{user.image}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.description}}</td>
+                    <td>{{user.category}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
       </div>
-    </div>
-  </div>
+      </div>
 </div>
