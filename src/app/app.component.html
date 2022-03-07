@@ -1,45 +1,53 @@
 
-
+<p-toast position="top-center" key="tc"></p-toast>
 
 <div class="p-m-4">
-      <h3 class="text-color">
-        Conexión a internet &nbsp; 
-        <p-tag *ngIf="status" styleClass="p-mr-2" severity="success" value="ONLINE"></p-tag>
-        <p-tag *ngIf="!status" severity="danger" value="OFFLINE"></p-tag>
-      </h3>
+      <div class="p-fluid p-grid">
+        <div class="p-field p-col-12 p-md-8 ">
+          <h3 class="text-color">
+            Conexión a internet &nbsp; 
+            <p-tag *ngIf="status" styleClass="p-mr-2" severity="success" value="ONLINE"></p-tag>
+            <p-tag *ngIf="!status" severity="danger" value="OFFLINE"></p-tag>
+          </h3>
+        </div>
+        <div class="p-field p-col-12 p-md-4 ">
+              <button [disabled]="!status" icon="pi pi-spinner" pButton type="button" (click)="sync()"  label="Sincronizar"  class="p-mt-2 p-button-secondary"></button>
+        </div>
+      </div>
+
       <div class="card myBg2 myCard">
 
         <p-tabMenu [model]="items" [activeItem]="activeItem"> </p-tabMenu>
 
-        <div *ngIf="activeItem == items[0]">
+        <form *ngIf="activeItem == items[0]" autocomplete="off">
             <h1 class="text-color" >Añadir usuario </h1>
         
             <div class="p-fluid p-formgrid p-grid text-color">
                 <div class="p-field p-col">
                   <label for="firstname2">Firstname</label>
-                  <input id="firstname2" type="text" pInputText> 
+                  <input [(ngModel)]="user.name" name="firstname2" type="text" pInputText> 
                 </div>
                 <div class="p-field p-col text-color">
                     <label for="lastname2">Lastname</label>
-                    <input id="lastname2" type="text" pInputText> 
+                    <input [(ngModel)]="user.lastname" name="lastname2" type="text" pInputText> 
                 </div>
             </div>
             <div class="p-fluid p-formgrid p-grid text-color">
                 <div class="p-field p-col">
                   <label for="Email">Email</label>
-                  <input id="Email" type="email" pInputText> 
+                  <input [(ngModel)]="user.email" name="Email" type="email" pInputText> 
                 </div>
                 <div class="p-field p-col text-color">
                     <label for="edad">Edad</label>
-                    <input id="edad" type="text" pInputText> 
+                    <input [(ngModel)]="user.age" name="edad" type="text" pInputText> 
                 </div>  
             </div>
             <div class="p-fluid p-formgrid p-grid text-color">
               <div class="p-field p-col">
-                <button pButton type="button" label="Guardar" ></button>
+                <button pButton type="button" (click)="submit()" label="Guardar" ></button>
               </div>
             </div>
-        </div>
+        </form>
 
         <div *ngIf="activeItem == items[1]">
           <h1 class="text-color" >Listado de usuarios </h1>
@@ -47,18 +55,18 @@
           <p-table [value]="users">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Edad</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-user>
                 <tr>
-                    <td>{{user.image}}</td>
                     <td>{{user.name}}</td>
-                    <td>{{user.description}}</td>
-                    <td>{{user.category}}</td>
+                    <td>{{user.lastname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.age}}</td>
                 </tr>
             </ng-template>
         </p-table>

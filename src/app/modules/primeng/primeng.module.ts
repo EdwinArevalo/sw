@@ -6,6 +6,8 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +19,8 @@ import {TableModule} from 'primeng/table';
     PanelMenuModule,
     TabMenuModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    ToastModule
   ]
 })
 export class PrimengModule { }
