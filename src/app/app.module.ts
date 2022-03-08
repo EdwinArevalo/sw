@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { PrimengModule } from './modules/primeng/primeng.module';
-import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './shared/components/header/header.component';
 
 @NgModule({

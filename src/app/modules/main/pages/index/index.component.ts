@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, MessageService } from 'primeng/api';
-import { User } from 'src/app/schemas/user.interface';
+import { User } from 'src/app/schemas/user/user.interface';
 import { ConnectionService } from 'src/app/services/connection.service';
 import { DatabaseService } from 'src/app/services/database.service';
 

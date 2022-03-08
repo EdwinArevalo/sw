@@ -56,3 +56,19 @@ html, body {
       width: 1500px;
     }
   }
+
+
+  .p-button-primary {
+    background-color: #8a2d82 !important;
+  }
+
+  .wic_logo {
+    height: 190px;
+    width: 100%;
+    // background-image: url("~src/assets/img/wic_logo.png")
+    background: url('~src/assets/img/wic_logo.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #8a2d82ea;
+    border-radius: 3%;
+}

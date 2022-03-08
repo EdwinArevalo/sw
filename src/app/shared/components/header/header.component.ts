@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ConnectionService } from 'src/app/services/connection.service';
 import { DatabaseService } from 'src/app/services/database.service';
@@ -18,11 +19,11 @@ export class HeaderComponent implements OnInit {
   constructor(
     private dbService: DatabaseService,
     private cs: ConnectionService, 
-    private ms: MessageService
+    private ms: MessageService,
+    public router: Router
     ) { }
 
-  ngOnInit(): void {
-
+  ngOnInit(): void { 
     this.cs.test()
         .subscribe(
           res => { this.status = true; },

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import PouchDb from 'pouchdb-browser';
 
-import { User } from '../schemas/user.interface';
+import { User } from '../schemas/user/user.interface';
 
 @Injectable({
   providedIn: 'root'

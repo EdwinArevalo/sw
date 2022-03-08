@@ -7,6 +7,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,9 @@ import { ToastModule } from 'primeng/toast';
     TabMenuModule,
     ButtonModule,
     TableModule,
-    ToastModule
+    ToastModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PrimengModule { }
