@@ -28,3 +28,31 @@ html, body {
     border-radius: 4px;
     margin-bottom: 2rem;
   }
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  // @media (min-width: 768px) {
+  //   .container {
+  //     width: 880px;
+  //   }
+  // }
+  // @media (min-width: 992px) {
+  //   .container {
+  //     width: 1050px;
+  //   }
+  // }
+  @media (min-width: 1300px) {
+    .container {
+      width: 1250px;
+    }
+  }
+
+  @media (min-width: 1740px) {
+    .container {
+      width: 1500px;
+    }
+  }
