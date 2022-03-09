@@ -29,7 +29,7 @@ export class IndexComponent implements OnInit {
       {
         label: 'Listado',
         icon:'pi pi-fw pi-list',
-        routerLink: '/counselor/contacts/list',
+        routerLink: '/contacts/list',
         command: () => {
           // this.activeItem = this.items[1]; 
         }
@@ -37,7 +37,7 @@ export class IndexComponent implements OnInit {
       {
         label: 'Nuevo',
         icon:'pi pi-fw pi-plus',
-        routerLink: '/counselor/contacts/new',
+        routerLink: '/contacts/new',
         command: () => {
           // this.activeItem = this.items[0]; 
         }

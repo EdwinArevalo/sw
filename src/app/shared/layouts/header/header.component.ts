@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit{
       {
         label: 'Contactos',
         icon: 'pi pi-fw pi-clock',
-        routerLink: '/counselor/contacts',
+        routerLink: '/contacts',
         command: () => {
             this.router.navigateByUrl(this.router.url);
         },
@@ -41,12 +41,12 @@ export class HeaderComponent implements OnInit{
           {
             label: 'Listado',
             icon: 'pi pi-fw pi-list',
-            routerLink: '/counselor/contacts/list',
+            routerLink: '/contacts/list',
           },
           {
             label: 'Nuevo',
             icon: 'pi pi-fw pi-plus',
-            routerLink: '/counselor/contacts/new',
+            routerLink: '/contacts/new',
           },
           
         ]

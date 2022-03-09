@@ -8,36 +8,31 @@ import { ListComponent } from './components/list/list.component';
 const routes: Routes = [
   {
     path: '',
+    component: IndexComponent,
+    canLoad: [ValidateTokenGuard], 
+    canActivate: [ValidateTokenGuard],
     children: [
       {
-        path: 'contacts',
-        component: IndexComponent,
+        path: 'new',
+        component: NewComponent,
         canLoad: [ValidateTokenGuard], 
         canActivate: [ValidateTokenGuard],
-        children: [
-          {
-            path: 'new',
-            component: NewComponent,
-            canLoad: [ValidateTokenGuard], 
-            canActivate: [ValidateTokenGuard],
-          },
-          {
-            path: 'list',
-            component: ListComponent,
-            canLoad: [ValidateTokenGuard], 
-            canActivate: [ValidateTokenGuard],
-          },
-          {
-            path: '**',
-            redirectTo: 'list' 
-          }
-        ]
+      },
+      {
+        path: 'list',
+        component: ListComponent,
+        canLoad: [ValidateTokenGuard], 
+        canActivate: [ValidateTokenGuard],
       },
       {
         path: '**',
-        redirectTo: 'contacts' 
+        redirectTo: 'list' 
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: 'contacts' 
   }
 ];
 

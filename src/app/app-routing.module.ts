@@ -6,7 +6,7 @@ import { HeaderComponent } from './shared/layouts/header/header.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/counselor/contacts',
+    redirectTo: '/contacts/list',
     pathMatch: 'full',
     // component: HeaderComponent,
   },
@@ -19,21 +19,21 @@ const routes: Routes = [
     canActivate: [ValidateGuard]
   }, 
   {
-    path: '',
+    path: 'contacts',
     component: HeaderComponent,
-    children: [
-        {
-          path: 'counselor',
+    // children: [
+        // {
+          // path: 'counselor',
           loadChildren: () => import('./modules/main/main.module').then(
             (m) => m.MainModule
           ),
-        },
+        // },
         
-      ]
+      // ]
   }, 
   {
     path: '**',
-    redirectTo: 'counselor'
+    redirectTo: 'contacts'
   }
 ];
 

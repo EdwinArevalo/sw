@@ -23,7 +23,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      {label: 'Consejera'},
       {label: 'Contactos'},
       {label: 'Listado'},
     ];

@@ -24,7 +24,6 @@ export class NewComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = [
-      {label: 'Consejera'},
       {label: 'Contactos'},
       {label: 'Nuevo'},
     ];
