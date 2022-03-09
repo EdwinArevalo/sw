@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { Credentials } from '../../../../schemas/user/credentials.interface';
+import { Credentials } from 'src/app/data/schemas/user/credentials.interface';
 import { AuthService } from '../../services/auth.service';
 
 @Component({

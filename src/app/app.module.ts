@@ -7,8 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { PrimengModule } from './modules/primeng/primeng.module';
 import { HeaderComponent } from './shared/components/header/header.component';
+import { PrimengModule } from './shared/modules/primeng.module';
 
 @NgModule({
   declarations: [

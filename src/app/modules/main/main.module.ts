@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
 import { IndexComponent } from './pages/index/index.component';
-import { PrimengModule } from '../primeng/primeng.module';
+import { PrimengModule } from 'src/app/shared/modules/primeng.module';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { PrimengModule } from '../primeng/primeng.module';
   imports: [
     CommonModule,
     MainRoutingModule,
-    PrimengModule, 
+    PrimengModule
   ]
 })
 export class MainModule { }

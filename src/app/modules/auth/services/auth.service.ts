@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ResponseBase } from 'src/app/schemas/base/ResponseBase.interface';
-import { TokenResponse } from 'src/app/schemas/user/tokenResponse.interface';
 import getDecodedToken from 'src/app/utils/getTokenData';
 import { environment } from 'src/environments/environment';
-import { Credentials } from '../../../schemas/user/credentials.interface';
 import { tap } from 'rxjs/operators';
+import { Credentials } from 'src/app/data/schemas/user/credentials.interface';
+import { TokenResponse } from 'src/app/data/schemas/user/tokenResponse.interface';
+import { ResponseBase } from 'src/app/data/schemas/base/ResponseBase.interface';
 
 @Injectable({
   providedIn: 'root'

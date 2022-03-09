@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
-import { PrimengModule } from '../primeng/primeng.module';
+import { PrimengModule } from 'src/app/shared/modules/primeng.module';
 
 
 @NgModule({
