@@ -29,12 +29,12 @@ export class HeaderComponent implements OnInit{
         icon: 'pi pi-user'
       },
       {
-        label: 'Contacts',
+        label: 'Contactos',
         icon: 'pi pi-fw pi-clock',
         routerLink: '/counselor/contacts',
         items: [
           {
-            label: 'Añadir',
+            label: 'Nuevo',
             icon: 'pi pi-fw pi-plus',
           },
           {

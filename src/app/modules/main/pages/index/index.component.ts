@@ -33,7 +33,7 @@ export class IndexComponent implements OnInit {
 
       this.items = [
         {
-          label: 'Añadir',
+          label: 'Nuevo',
           icon:'pi pi-fw pi-plus',
           command: () => {
             this.activeItem = this.items[0];
