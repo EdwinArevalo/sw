@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
-import { ConnectionService } from 'src/app/services/connection.service';
-import { DatabaseService } from 'src/app/services/database.service';
+import { Component, OnInit } from '@angular/core'; 
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +7,32 @@ import { DatabaseService } from 'src/app/services/database.service';
   styleUrls: ['./header.component.scss'],
   
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
-  constructor(){
+  items: MenuItem[] = [];
+  constructor(){ 
+    
+  }
 
+  ngOnInit(): void {
+    this.items = [
+      {
+        label: 'Contacts',
+        icon: 'pi pi-fw pi-clock',
+        // routerLink: '/counselor/contacts',
+        items: [
+          {
+            label: 'Añadir',
+            icon: 'pi pi-fw pi-plus',
+          },
+          {
+            label: 'Listado',
+            icon: 'pi pi-fw pi-list',
+          }
+        ]
+      }
+      
+  ];
   }
 
 }

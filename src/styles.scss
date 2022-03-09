@@ -35,7 +35,7 @@ html, body {
   }
 
   .loginContainer {
-    margin-top: 20vh;
+    margin-top: 16vh;
     margin-left: 10%;
     margin-right: 10%;
   }
@@ -90,4 +90,14 @@ html, body {
 
 .myBtn {
   height: 3.3rem;
+}  .p-menuitem-link-active {
+  // border: 1px solid $my-primary-color !important;
+  // background-color:  lighten( $my-primary-color,10%)  !important; 
+  background-color:  var(--surface-d) !important; 
+  
+}
+
+.p-menuitem-link-active {
+  background-color:  var(--surface-d) !important; 
+  
 }

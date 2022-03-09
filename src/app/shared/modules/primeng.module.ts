@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule
   ],
   exports: [
+    ReactiveFormsModule,
     TagModule,
     InputTextModule,
     PanelMenuModule,
@@ -23,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableModule,
     ToastModule,
     FormsModule,
-    ReactiveFormsModule
+    MenubarModule
   ]
 })
 export class PrimengModule { }
