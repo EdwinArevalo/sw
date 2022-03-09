@@ -1,7 +1,8 @@
 
 <p-toast position="top-left" key="tl"></p-toast>
-
-    <div class="p-grid fullSreeen">
+ 
+<div class="loginContainer">
+    <div class="p-grid card myBg2 loginCard">
         <!-- left -->
         <div class="p-col-12 p-md-6 p-lg-5">
             <!-- <div class="p-d-flex p-jc-center"> -->
@@ -10,7 +11,7 @@
                         <!-- LOGIN FORM -->
                         <div class="p-mr-2 p-as-center">
                             <div class="p-ml-4" style="width: 320px;">
-                                <h1>Iniciar Sesión</h1>
+                                <h1 style="margin-top: 3rem; font-size: 2.2rem;">Counselor App</h1>
                                 <form  (ngSubmit)="login()" [formGroup]="loginForm" autocomplete="off" class="p-mt-4">
                                     <div class="p-fluid ">
                                         <div class="p-field ">
@@ -34,15 +35,14 @@
                                             <small *ngIf="isFieldValid('password')" id="password-help" class="p-error">Password es requerido.</small>
                                         </div>
                                         <div class="p-field">
-                                            <button pButton type="submit" label="Ingresar" class="myBtn p-button-primary"></button>
+                                            <button pButton type="submit" label="Iniciar Sesión" class="myBtn p-button-primary"></button>
                                         </div>
                                     </div>
                                 </form>
+                                <div style="margin-top: 1rem;">
+                                    <app-connection-status ></app-connection-status>
+                                </div>
                             </div>
-                        </div>
-                        <!-- FOOTER -->
-                        <div class="p-mr-2 p-as-end">
-                            <!-- conexión a internet -->
                         </div>
                     </div>
                 
@@ -59,5 +59,4 @@
             <!-- </div> -->
         </div>
     </div>
-
-   
+</div>
