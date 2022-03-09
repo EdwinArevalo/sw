@@ -98,6 +98,14 @@ html, body {
 }
 
 .p-menuitem-link-active {
-  background-color:  #f3f3f3 !important; 
-  
+  background-color:  #8a2d82 !important; 
+  color: white !important;
+}
+
+.p-menuitem-link-active a {
+  color: white !important;
+}
+
+.p-menuitem-link-active span {
+  color: white !important;
 }

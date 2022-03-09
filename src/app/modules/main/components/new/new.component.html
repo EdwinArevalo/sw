@@ -1,0 +1,31 @@
+<p-toast position="top-center" key="tc"></p-toast>
+<!-- contact form -->
+<form autocomplete="off">
+    <h1 class="text-color" >Nuevo contacto </h1>
+
+    <div class="p-fluid p-formgrid p-grid text-color">
+        <div class="p-field p-col">
+          <label for="firstname2">Firstname</label>
+          <input [(ngModel)]="user.name" name="firstname2" type="text" pInputText> 
+        </div>
+        <div class="p-field p-col text-color">
+            <label for="lastname2">Lastname</label>
+            <input [(ngModel)]="user.lastname" name="lastname2" type="text" pInputText> 
+        </div>
+    </div>
+    <div class="p-fluid p-formgrid p-grid text-color">
+        <div class="p-field p-col">
+          <label for="Email">Email</label>
+          <input [(ngModel)]="user.email" name="Email" type="email" pInputText> 
+        </div>
+        <div class="p-field p-col text-color">
+            <label for="edad">Edad</label>
+            <input [(ngModel)]="user.age" name="edad" type="text" pInputText> 
+        </div>  
+    </div>
+    <div class="p-fluid p-formgrid p-grid text-color">
+      <div class="p-field p-col">
+        <button pButton class="p-button-primary" type="button" (click)="submit()" label="Guardar" ></button>
+      </div>
+    </div>
+  </form>

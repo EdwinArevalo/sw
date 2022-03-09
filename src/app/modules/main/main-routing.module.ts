@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ValidateTokenGuard } from 'src/app/secure/guards/validate-token.guard';
 import { IndexComponent } from './pages/index/index.component';
+import { NewComponent } from './components/new/new.component';
+import { ListComponent } from './components/list/list.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,24 @@ const routes: Routes = [
         component: IndexComponent,
         canLoad: [ValidateTokenGuard], 
         canActivate: [ValidateTokenGuard],
+        children: [
+          {
+            path: 'new',
+            component: NewComponent,
+            canLoad: [ValidateTokenGuard], 
+            canActivate: [ValidateTokenGuard],
+          },
+          {
+            path: 'list',
+            component: ListComponent,
+            canLoad: [ValidateTokenGuard], 
+            canActivate: [ValidateTokenGuard],
+          },
+          {
+            path: '**',
+            redirectTo: 'list' 
+          }
+        ]
       },
       {
         path: '**',

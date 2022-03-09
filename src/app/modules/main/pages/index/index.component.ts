@@ -8,75 +8,45 @@ import { DatabaseService } from 'src/app/services/database.service';
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss'],
-  providers: [
-    MessageService
-  ]
 })
 export class IndexComponent implements OnInit {
 
-  constructor(
-    private cs: ConnectionService, 
-    private dbService: DatabaseService,
-    private messageService: MessageService,
-    ){
-
+  constructor( 
+    ){ 
   }
 
   items! : MenuItem[];
-  activeItem!: MenuItem;
-  users: any[] = [];
-  user: User = new User();
 
   ngOnInit(): void { 
-
-      this.loadUserTable();
 
       this.items = [
         {
           label: 'Nuevo',
           icon:'pi pi-fw pi-plus',
+          routerLink: '/counselor/contacts/new',
           command: () => {
-            this.activeItem = this.items[0];
+            // this.activeItem = this.items[0];
           }
         },
         {
           label: 'Listado',
           icon:'pi pi-fw pi-list',
+          routerLink: '/counselor/contacts/list',
           command: () => {
-            this.activeItem = this.items[1];
+            // this.activeItem = this.items[1];
           }
         },
       ]
 
-      this.activeItem = this.items[0];
+      // this.activeItem = this.items[0];
   }
-
-  title = 'swtest';
   
-  submit(){
-    this.dbService.addUSer(this.user);
-    this.user = new User();
-    this.loadUserTable();
-    this.messageService.add({key: 'tc', severity:'success', summary: 'Éxito', detail: 'Usuario agregado correctamente'});
-  }
+  
 
-  loadUserTable(){
-    this.users = [];
-
-    this.dbService.getUsers()
-        .then((res: any) => {
-          res.rows.forEach(element => {
-              this.users.push(element.doc);
-          });
-          // console.log(this.users);
-        });
-  }
-
-  sync(){
-    setTimeout(() => {
-      this.users = [];
-      this.messageService.add({key: 'tc', severity:'success', summary: 'Éxito', detail: 'Sincronizado correctamente'});
-    }, 1000);
-  }
+  // sync(){
+  //   setTimeout(() => {
+  //     this.messageService.add({key: 'tc', severity:'success', summary: 'Éxito', detail: 'Sincronizado correctamente'});
+  //   }, 1000);
+  // }
 
 }
