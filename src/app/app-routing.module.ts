@@ -10,6 +10,12 @@ const routes: Routes = [
     // component: HeaderComponent,
   },
   {
+    path: 'auth',
+    loadChildren: () => import('./modules/auth/auth.module').then(
+      (m) => m.AuthModule
+      ),
+  }, 
+  {
     path: '',
     component: HeaderComponent,
     children: [
@@ -19,12 +25,7 @@ const routes: Routes = [
             (m) => m.MainModule
             ) ,
         },
-        {
-          path: 'auth',
-          loadChildren: () => import('./modules/auth/auth.module').then(
-            (m) => m.AuthModule
-            ),
-        }, 
+        
       ]
   }, 
   {

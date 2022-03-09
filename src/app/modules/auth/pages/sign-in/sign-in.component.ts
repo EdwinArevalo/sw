@@ -49,14 +49,14 @@ export class SignInComponent implements OnInit {
         (res) => {
           console.log(res);
           if (res.code == 401) {
-            this.messageService.add({key: 'tc', severity:'error', summary: 'Credenciales incorrectas', detail: 'Usuario o password inválido'});
+            this.messageService.add({key: 'tl', severity:'error', summary: 'Credenciales incorrectas', detail: 'Usuario o password inválido'});
           }else if (res.code == 0){
             this.loginForm.reset();
             this.router.navigate(['counselor','contacts']);
           } 
         },
         (err) => {
-          this.messageService.add({key: 'tc', severity:'error', summary: 'Error', detail: 'Contáctese con el administrador'});
+          this.messageService.add({key: 'tl', severity:'error', summary: 'Error', detail: 'Contáctese con el administrador'});
         }
       ); 
   }
