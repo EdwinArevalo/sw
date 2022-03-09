@@ -6,20 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import { HeaderComponent } from './shared/layouts/header/header.component';
-import { PrimengModule } from './shared/modules/primeng.module';
-import { ConnectionStatusComponent } from './shared/components/connection-status/connection-status.component';
+import { environment } from '../environments/environment'; 
+import { PrimengModule } from './shared/modules/primeng.module'; 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    ConnectionStatusComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    PrimengModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
