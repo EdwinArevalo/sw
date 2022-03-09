@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBase: 'http://18.232.226.120/CounselorsAPIDev/'
+  urlBase: 'https://enviodocumentos.wicpr.net/CounselorsAPI/'
 };
 
 /*
