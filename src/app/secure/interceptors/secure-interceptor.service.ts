@@ -1,6 +1,7 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 // import { NgxSpinnerService } from 'ngx-spinner';
@@ -14,12 +15,12 @@ export class SecureInterceptorService {
   constructor(
       private authService : AuthService, 
       private router: Router,
-      // private spinner: NgxSpinnerService
+      private spinner: NgxSpinnerService
     ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    // this.spinner.show();
+    this.spinner.show();
 
     if (this.authService.verifyAuthentication()) {
       request = request.clone({
@@ -35,7 +36,7 @@ export class SecureInterceptorService {
     return next.handle(request).pipe(
       map((event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
-            // this.spinner.hide();
+            this.spinner.hide();
           }
           return event;
       }),
@@ -43,7 +44,7 @@ export class SecureInterceptorService {
         if (err.status === 401) {
           this.authService.logOut();
         }
-        // this.spinner.hide(); 
+        this.spinner.hide(); 
         return throwError( err );
       })
     );
