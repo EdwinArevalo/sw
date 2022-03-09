@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidateTokenGuard } from 'src/app/secure/guards/validate-token.guard';
 import { IndexComponent } from './pages/index/index.component';
 
 const routes: Routes = [
@@ -8,7 +9,9 @@ const routes: Routes = [
     children: [
       {
         path: 'contacts',
-        component: IndexComponent
+        component: IndexComponent,
+        canLoad: [ValidateTokenGuard], 
+        canActivate: [ValidateTokenGuard],
       },
       {
         path: '**',

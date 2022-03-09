@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidateGuard } from './secure/guards/validate.guard';
 import { HeaderComponent } from './shared/layouts/header/header.component';
 
 const routes: Routes = [
@@ -14,6 +15,8 @@ const routes: Routes = [
     loadChildren: () => import('./modules/auth/auth.module').then(
       (m) => m.AuthModule
       ),
+    canLoad: [ValidateGuard], 
+    canActivate: [ValidateGuard]
   }, 
   {
     path: '',
@@ -23,7 +26,7 @@ const routes: Routes = [
           path: 'counselor',
           loadChildren: () => import('./modules/main/main.module').then(
             (m) => m.MainModule
-            ) ,
+          ),
         },
         
       ]
