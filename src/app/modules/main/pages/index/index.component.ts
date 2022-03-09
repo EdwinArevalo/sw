@@ -68,7 +68,7 @@ export class IndexComponent implements OnInit {
           res.rows.forEach(element => {
               this.users.push(element.doc);
           });
-          console.log(this.users);
+          // console.log(this.users);
         });
   }
 

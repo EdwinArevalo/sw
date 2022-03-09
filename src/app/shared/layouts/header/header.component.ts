@@ -11,6 +11,8 @@ import { AuthService } from '../../../modules/auth/services/auth.service';
 export class HeaderComponent implements OnInit{
 
   items: MenuItem[] = [];
+  fullname!: string;
+
   constructor(
     private authService: AuthService
   ){ 
@@ -18,11 +20,18 @@ export class HeaderComponent implements OnInit{
   }
 
   ngOnInit(): void {
+
+    this.fullname = this.authService.getUser()['fullname']; 
+
     this.items = [
+      {
+        label: `${this.fullname}`,
+        icon: 'pi pi-user'
+      },
       {
         label: 'Contacts',
         icon: 'pi pi-fw pi-clock',
-        // routerLink: '/counselor/contacts',
+        routerLink: '/counselor/contacts',
         items: [
           {
             label: 'Añadir',

@@ -47,7 +47,6 @@ export class SignInComponent implements OnInit {
     this.authService.signIn(credentials)
       .subscribe(
         (res) => {
-          console.log(res);
           if (res.code == 401) {
             this.messageService.add({key: 'tl', severity:'error', summary: 'Credenciales incorrectas', detail: 'Usuario o password inválido'});
           }else if (res.code == 0){

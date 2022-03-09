@@ -38,7 +38,6 @@ export class AuthService {
 
   signIn(user: Credentials)
   {
-    console.log(user);
     return this.http.post<ResponseBase<TokenResponse>>(`${environment.urlBase}api/auth/login`, user)
       .pipe(
         tap( res => { if (res.code == 0) {
