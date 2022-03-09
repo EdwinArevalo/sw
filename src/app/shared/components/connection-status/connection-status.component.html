@@ -1,6 +1,6 @@
 <p-toast position="top-center" key="tc"></p-toast>
 <div class="p-fluid p-grid">
-    <div class="p-field p-col-12 p-md-8 ">
+    <div [class]="'p-field p-col-12 p-md-' + ( router.url.includes('auth') ? '12':'8') ">
       <h3 class="text-color">
         Conexión a internet &nbsp; 
         <p-tag *ngIf="status" styleClass="p-mr-2" severity="success" value="ONLINE"></p-tag>
