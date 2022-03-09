@@ -4,7 +4,7 @@
       <img src="https://ebtshopper.com/wp-content/uploads/2017/09/PR-Logo-400x200.png" height="40" class="p-mr-2">
     </ng-template>
     <ng-template pTemplate="end">
-      <button pButton type="button" [routerLink]="['/auth']" label="Cerrar Sesión" icon="pi pi-power-off" class="p-ml-4 p-button-primary"></button> 
+      <button pButton type="button" (click)="logout()" label="Cerrar Sesión" icon="pi pi-power-off" class="p-ml-4 p-button-primary"></button> 
     </ng-template>
   </p-menubar>
 </div>
