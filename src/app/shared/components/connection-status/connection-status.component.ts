@@ -5,14 +5,14 @@ import { ConnectionService } from 'src/app/services/connection.service';
 import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-connection-status',
+  templateUrl: './connection-status.component.html',
+  styleUrls: ['./connection-status.component.scss'],
   providers: [
     MessageService
   ]
 })
-export class HeaderComponent implements OnInit {
+export class ConnectionStatusComponent implements OnInit {
 
   status!: boolean; 
 

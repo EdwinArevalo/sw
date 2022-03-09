@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderComponent } from './shared/layouts/header/header.component';
 import { PrimengModule } from './shared/modules/primeng.module';
+import { ConnectionStatusComponent } from './shared/components/connection-status/connection-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ConnectionStatusComponent
   ],
   imports: [
     BrowserModule,
