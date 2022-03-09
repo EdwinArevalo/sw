@@ -8,18 +8,13 @@ import { DatabaseService } from 'src/app/services/database.service';
   selector: 'app-connection-status',
   templateUrl: './connection-status.component.html',
   styleUrls: ['./connection-status.component.scss'],
-  providers: [
-    MessageService
-  ]
 })
 export class ConnectionStatusComponent implements OnInit {
 
   status!: boolean; 
 
   constructor(
-    private dbService: DatabaseService,
     private cs: ConnectionService, 
-    private ms: MessageService,
     public router: Router
     ) { }
 

@@ -1,7 +1,11 @@
 <p-toast position="top-center" key="tc"></p-toast>
 <!-- contact form -->
-<form autocomplete="off">
-    <h1 class="text-color" >Nuevo contacto </h1>
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<div class="card myBg2 myCard p-mt-3"> 
+  <form autocomplete="off">
+    <h1 class="text-color" style="margin-top: 0;">Nuevo contacto </h1>
 
     <div class="p-fluid p-formgrid p-grid text-color">
         <div class="p-field p-col">
@@ -25,7 +29,8 @@
     </div>
     <div class="p-fluid p-formgrid p-grid text-color">
       <div class="p-field p-col">
-        <button pButton class="p-button-primary" type="button" (click)="submit()" label="Guardar" ></button>
+        <button pButton class="p-button-primary myBtn" type="button" (click)="submit()" label="Guardar" ></button>
       </div>
     </div>
   </form>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { User } from 'src/app/data/schemas/user/user.interface';
 import { DatabaseService } from 'src/app/services/database.service';
 
@@ -14,13 +14,21 @@ import { DatabaseService } from 'src/app/services/database.service';
 export class NewComponent implements OnInit {
 
   user: User = new User();
+  home!: MenuItem; 
 
   constructor(
     private dbService: DatabaseService,
     private messageService: MessageService,
   ) { }
+  items: any;
 
   ngOnInit(): void {
+    this.items = [
+      {label: 'Consejera'},
+      {label: 'Contactos'},
+      {label: 'Nuevo'},
+    ];
+    this.home = {icon: 'pi pi-home'};
   }
 
   submit(){

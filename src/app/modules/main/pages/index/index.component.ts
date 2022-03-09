@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
 import { User } from 'src/app/data/schemas/user/user.interface';
 import { ConnectionService } from 'src/app/services/connection.service';
@@ -12,31 +13,37 @@ import { DatabaseService } from 'src/app/services/database.service';
 export class IndexComponent implements OnInit {
 
   constructor( 
+    private router: Router
     ){ 
   }
 
-  items! : MenuItem[];
+  menuItems! : MenuItem[];
 
-  ngOnInit(): void { 
 
-      this.items = [
-        {
-          label: 'Nuevo',
-          icon:'pi pi-fw pi-plus',
-          routerLink: '/counselor/contacts/new',
-          command: () => {
-            // this.activeItem = this.items[0];
-          }
-        },
-        {
-          label: 'Listado',
-          icon:'pi pi-fw pi-list',
-          routerLink: '/counselor/contacts/list',
-          command: () => {
-            // this.activeItem = this.items[1];
-          }
-        },
-      ]
+  items!: MenuItem[];
+  
+  ngOnInit() {
+    
+
+    this.menuItems = [
+      {
+        label: 'Listado',
+        icon:'pi pi-fw pi-list',
+        routerLink: '/counselor/contacts/list',
+        command: () => {
+          // this.activeItem = this.items[1]; 
+        }
+      },
+      {
+        label: 'Nuevo',
+        icon:'pi pi-fw pi-plus',
+        routerLink: '/counselor/contacts/new',
+        command: () => {
+          // this.activeItem = this.items[0]; 
+        }
+      },
+      
+    ]
 
       // this.activeItem = this.items[0];
   }

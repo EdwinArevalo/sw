@@ -9,6 +9,7 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenubarModule } from 'primeng/menubar';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [],
@@ -22,6 +23,7 @@ import { MenubarModule } from 'primeng/menubar';
     PanelMenuModule,
     TabMenuModule,
     ButtonModule,
+    BreadcrumbModule,
     TableModule,
     ToastModule,
     FormsModule,

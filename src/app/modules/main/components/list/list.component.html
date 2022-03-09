@@ -1,7 +1,10 @@
 <p-toast position="top-center" key="tc"></p-toast>
 <!-- list -->
-<div>
-    <h1 class="text-color" >Listado de contactos </h1>
+
+<p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
+
+<div class="card myBg2 myCard p-mt-3"> 
+    <h1 class="text-color" style="margin-top: 0;">Listado de contactos </h1>
 
     <p-table [value]="users" styleClass="p-datatable-striped" [paginator]="true" [rows]="5" [showCurrentPageReport]="true" 
     currentPageReportTemplate="Página del {first} al {last} de {totalRecords} resultados" [rowsPerPageOptions]="[5,10,15,25]">

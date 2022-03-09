@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
@@ -12,17 +12,26 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class ListComponent implements OnInit {
 
-    users!: any[];
-    constructor(
-      private dbService: DatabaseService,
-      private messageService: MessageService,
-    ) { }
+  users!: any[];
+  constructor(
+    private dbService: DatabaseService,
+    private messageService: MessageService,
+  ) { }
+
+  items: any;
+  home!: MenuItem; 
 
   ngOnInit(): void {
+    this.items = [
+      {label: 'Consejera'},
+      {label: 'Contactos'},
+      {label: 'Listado'},
+    ];
 
+    this.home = {icon: 'pi pi-home'};
     this.loadUserTable();
 
-  }
+  } 
 
   loadUserTable(){
     this.users = [];

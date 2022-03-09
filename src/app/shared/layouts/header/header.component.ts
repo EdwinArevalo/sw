@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'; 
 import { MenuItem } from 'primeng/api';
 import { AuthService } from '../../../modules/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit{
   fullname!: string;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
   ){ 
     
   }
@@ -32,15 +34,21 @@ export class HeaderComponent implements OnInit{
         label: 'Contactos',
         icon: 'pi pi-fw pi-clock',
         routerLink: '/counselor/contacts',
+        command: () => {
+            this.router.navigateByUrl(this.router.url);
+        },
         items: [
-          {
-            label: 'Nuevo',
-            icon: 'pi pi-fw pi-plus',
-          },
           {
             label: 'Listado',
             icon: 'pi pi-fw pi-list',
-          }
+            routerLink: '/counselor/contacts/list',
+          },
+          {
+            label: 'Nuevo',
+            icon: 'pi pi-fw pi-plus',
+            routerLink: '/counselor/contacts/new',
+          },
+          
         ]
       }
       
