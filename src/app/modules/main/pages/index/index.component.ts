@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuItem, MessageService } from 'primeng/api';
+import { MegaMenuItem, MenuItem, MessageService } from 'primeng/api';
 import { User } from 'src/app/data/schemas/user/user.interface';
 import { ConnectionService } from 'src/app/services/connection.service';
 import { DatabaseService } from 'src/app/services/database.service';
@@ -17,7 +17,7 @@ export class IndexComponent implements OnInit {
     ){ 
   }
 
-  menuItems! : MenuItem[];
+  menuItems! : MegaMenuItem[];
 
 
   items!: MenuItem[];
