@@ -17,7 +17,7 @@ export class IndexComponent implements OnInit {
     ){ 
   }
 
-  menuItems! : MegaMenuItem[];
+  menuItems! : MenuItem[];
 
 
   items!: MenuItem[];
